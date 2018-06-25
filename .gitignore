@@ -1,0 +1,5 @@
+.idea
+build
+template
+
+**/node_modules
