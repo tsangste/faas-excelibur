@@ -4,14 +4,15 @@
   "description": "",
   "main": "handler.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/mocha --exit"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "exceljs": "^1.5.0",
-    "image-size": "^0.6.3"
+    "image-size": "^0.6.3",
+    "unstream": "^2.0.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",

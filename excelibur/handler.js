@@ -12,6 +12,6 @@ module.exports = (context, callback) => {
   }
 
   writeWorkbook(options)
-    .then(result => result.pipe(process.stdout))
+    .then(result => callback(null, result))
     .catch((err) => callback(err, null))
 }

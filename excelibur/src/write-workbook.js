@@ -1,5 +1,5 @@
-const fs = require('fs')
 const createWorkbook = require('./create-workbook')
+const unstream = require('unstream')
 
 function WriteWorkbook(options) {
     let workbook
@@ -15,9 +15,7 @@ function WriteWorkbook(options) {
         return Promise.reject('Cannot create an excel file for this file extension')
     }
 
-    const writeStream = fs.createWriteStream('spreadsheet')
-
-    return new Promise((resolve, reject) => workbookFile.write(writeStream, data => resolve(data)))
+    return new Promise((resolve, reject) => workbookFile.write(unstream({}, data => resolve(data))))
 }
 
 module.exports = WriteWorkbook
